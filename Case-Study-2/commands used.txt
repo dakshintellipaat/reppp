@@ -1,0 +1,30 @@
+ sudo git clone https://github.com/devops-intellipaat/merge-conflict.git
+ cd merge-conflict/
+ sudo git branch -a
+ sudo git checkout origin/feature1
+ sudo git switch -c feature1
+ sudo git checkout origin/feature2
+ sudo git switch -c feature2
+ sudo git checkout feature1
+ sudo git merge master 
+ sudo nano main.c 
+ sudo git add main.c
+ sudo git commit -m "Updated Patch To Feature1"
+ sudo git checkout feature2
+ sudo git merge master 
+ sudo nano main.c 
+ sudo git add main.c
+ sudo git commit -m "Updated Patch To Feature2"
+ sudo git checkout master 
+ sudo git merge feature1
+ sudo git merge feature2
+ sudo nano main.c 
+ sudo git add main.c
+ sudo git commit -m "Merged Feature1 and Feature2 with master"
+ sudo git remote -v
+ sudo git remote remove origin
+ sudo git remote add origin https://github.com/ayushmaan-singh1/merge-conflict.git
+ sudo git push --all 
+
+
+github-url: https://github.com/ayushmaan-singh1/merge-conflict

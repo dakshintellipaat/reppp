@@ -1,0 +1,15 @@
+sudo git checkout develop 
+sudo git flow feature start feature1
+sudo echo "Code for feature1" > feature1.txt
+sudo git add feature1.txt
+sudo git commit -m "added feature1.txt"
+sudo git flow feature finish feature1
+sudo git flow release start $(date +%Y.%m)
+sudo echo "Release $(date +%Y.%m) preparation" > release-notes.txt
+sudo git add release-notes.txt
+sudo git commit -m "Added release date $(date +%Y.%m)"
+sudo git flow release finish $(date +%Y.%m)
+sudo git checkout master
+sudo git push --all
+
+github-url: https://github.com/ayushmaan-singh1/assignment
